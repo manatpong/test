@@ -1,0 +1,2 @@
+Encode : Array -> JSON
+Decode : JSON -> Array
