@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <h1>My Subject</h1>
+        Subject ID: <input type="text" name="subject_id">
+        Subject name: <input type="text" name="subject_name">
+        Subject price: <input type="number" name="subject_price">
+
+        <p id="demo"></p>
+
+        <script>
+            obj = { "table":"subjects", "limit":10 };
+            dbParam = JSON.stringify(obj);
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "post.php?x=" + dbParam, true);
+            xmlhttp.send();
+        </script>
+    </body>
+</html>
